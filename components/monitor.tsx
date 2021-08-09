@@ -35,7 +35,7 @@ const Monitor = ({condition}: Props) => {
             <div className={temperatureColor()}><FontAwesomeIcon className="icon" icon={faThermometerHalf} /><span>{condition?.temperature} ℃</span></div>
           </div>
           <div className="infoWrap">
-            <div className={temperatureColor()}><FontAwesomeIcon className="icon" icon={faTint} /><span>{condition?.humidity} ％</span></div>
+            <div className={humidityColor()}><FontAwesomeIcon className="icon" icon={faTint} /><span>{condition?.humidity} ％</span></div>
           </div>
         </CardContent>
       </Card>

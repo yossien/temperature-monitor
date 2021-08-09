@@ -5,6 +5,12 @@ import Head from 'next/head';
 import useSWR from "swr";
 import Monitor from "../components/monitor";
 import format from 'date-fns/format'
+import dynamic from 'next/dynamic'
+
+const DailyChart = dynamic(
+  () => import('../components/dailyChart'),
+  {ssr: false}
+)
 
 const Index = () => {
 
@@ -20,13 +26,7 @@ const Index = () => {
         <Head><title>temperature monitor page</title></Head>
         <div style={{marginTop: 60}}>
           <Monitor condition={latestCondition()}/>
-          {conditionList.map((c,i) => {
-            return (
-              <div key={i}>
-                <span>{c.time}</span><span> - {c.temperature}</span><span> - {c.humidity}</span>
-              </div>
-            )
-          })}
+          <DailyChart conditionList={conditionList}/>
         </div>
       </Layout>
     </>

@@ -2,7 +2,7 @@
   font-family: serif;
   font-weight: lighter;
   .title {
-    font-size: 32px;
+    font-size: 18px;
     color: #888888;
     text-align: center;
   }
@@ -10,13 +10,14 @@
     text-align: center;
   }
   .clock {
-    font-size: 28px;
+    font-size: 20px;
     color: #888888;
+    margin-bottom: 3rem;
   }
   .infoWrap {
     font-size: 48px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
     .icon {
       margin-right: 2rem;
     }
@@ -24,19 +25,24 @@
       color: #FF0000
     }
     .temperatureNormal {
-      color: #008800
+      color: #00AA00
     }
     .temperatureLow {
       color: #0000FF
     }
     .humidityHigh {
-      color: #FF0000
+      color: #880088
     }
     .humidityNormal {
-      color: #008800
+      color: #0088FF
     }
     .humidityLow {
-      color: #0000FF
+      color: #FFAA00
     }
   }
+}
+.chart {
+  align-content: center;
+  text-align: center;
+  margin: 10px auto;
 }

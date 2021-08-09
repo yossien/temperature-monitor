@@ -10,17 +10,15 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
   return (
     <>
-      <Container fixed>
-        <AppBar position="fixed">
-          <Toolbar>
-            <Typography variant="h6">Temperature Monitor</Typography>
-          </Toolbar>
-        </AppBar>
-        <Alert preview={preview}/>
-        <main>
-          {children}
-        </main>
-      </Container>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography variant="h6">Temperature Monitor</Typography>
+        </Toolbar>
+      </AppBar>
+      <Alert preview={preview}/>
+      <main>
+        {children}
+      </main>
     </>
   )
 }
