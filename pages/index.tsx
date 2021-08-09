@@ -36,8 +36,8 @@ const Index = () => {
 export default Index
 
 export const fetcher = param => {
-  // from 1 hour ago
-  const from = (new Date()).getTime() - 3600 * 1000
+  // from 12 hour ago
+  const from = (new Date()).getTime() - 3600 * 12 * 1000
   return getCondition(from)
 }
 
