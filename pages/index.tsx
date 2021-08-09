@@ -109,16 +109,14 @@ export const testCondition = () => {
 export const useCondition = () => {
 
   // update interval 5min
-  /*
   const {data ,error} = useSWR('/api/condition', fetcher, {
     dedupingInterval: ( 60 * 5 * 1000 )
   })
   if (!data || error){
     return []
   }
-   */
 
-  const data = testCondition()
+  // const data = testCondition()
 
   data.sort((a , b) => {
     return a.timestamp > b.timestamp
