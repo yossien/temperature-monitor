@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Head from 'next/head';
 import useSWR from "swr";
 import Monitor from "../components/monitor";
-
+import format from 'date-fns/format'
 
 const Index = () => {
 
@@ -133,8 +133,8 @@ export const useCondition = () => {
       timestamp: t,
       temperature: d.temperature,
       humidity: d.humidity,
-      date: `${dt.getFullYear()}/${dt.getMonth() + 1}/${dt.getDate()}`,
-      time: `${dt.getHours()}:${dt.getMinutes()}`
+      date: format(t, 'yyyy-M-d'),
+      time: format(t,'HH:mm')
     }
   }) as Condition[]
 }

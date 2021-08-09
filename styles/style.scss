@@ -1,0 +1,42 @@
+.monitor {
+  font-family: serif;
+  font-weight: lighter;
+  .title {
+    font-size: 32px;
+    color: #888888;
+    text-align: center;
+  }
+  .content {
+    text-align: center;
+  }
+  .clock {
+    font-size: 28px;
+    color: #888888;
+  }
+  .infoWrap {
+    font-size: 48px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .icon {
+      margin-right: 2rem;
+    }
+    .temperatureHigh {
+      color: #FF0000
+    }
+    .temperatureNormal {
+      color: #008800
+    }
+    .temperatureLow {
+      color: #0000FF
+    }
+    .humidityHigh {
+      color: #FF0000
+    }
+    .humidityNormal {
+      color: #008800
+    }
+    .humidityLow {
+      color: #0000FF
+    }
+  }
+}
