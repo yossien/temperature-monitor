@@ -3,6 +3,7 @@ import { Card, CardContent } from "@material-ui/core";
 import { faThermometerHalf, faTint } from '@fortawesome/free-solid-svg-icons/'
 import { faClock } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {makeHumidityColor, makeTemperatureColor} from "../lib/common";
 
 type Props = {
   condition: Condition
@@ -11,25 +12,19 @@ type Props = {
 const Monitor = ({condition}: Props) => {
 
   const temperatureColor = () => {
-    return condition?.temperature > 28 ? 'temperatureHigh'
-      : condition?.temperature < 23 ? 'temperatureLow'
-        : 'temperatureNormal'
+    return makeTemperatureColor(condition?.temperature)
   }
 
   const humidityColor = () => {
-    return condition?.humidity > 80 ? 'humidityHigh'
-      : condition?.humidity < 30 ? 'HumidityLow'
-        : 'humidityNormal'
+    return makeHumidityColor(condition?.humidity)
   }
 
   return (
     <>
-      <Card className="monitor">
-        <CardContent>
-          <div className="title">Latest Data</div>
-        </CardContent>
+      <div className="monitor">
+        <div className="title">Latest Data</div>
 
-        <CardContent className="content">
+        <div className="content">
           <div className="clock"><FontAwesomeIcon className="icon" icon={faClock}/> <span>{condition?.time}</span> </div>
           <div className="infoWrap">
             <div className={temperatureColor()}><FontAwesomeIcon className="icon" icon={faThermometerHalf} /><span>{condition?.temperature} ℃</span></div>
@@ -37,8 +32,8 @@ const Monitor = ({condition}: Props) => {
           <div className="infoWrap">
             <div className={humidityColor()}><FontAwesomeIcon className="icon" icon={faTint} /><span>{condition?.humidity} ％</span></div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </>
   )
 }
