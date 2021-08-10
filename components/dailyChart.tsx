@@ -39,7 +39,7 @@ const DailyChart = ({conditionList}: Props) => {
             <YAxis domain={['dataMin', 'dataMax']}/>
             <Tooltip/>
             <Area type="monotone" dataKey="humidity" fill="#66b1ef" stroke="#66b1ef" opacity={0.6}/>
-            <Brush/>
+            <Brush dataKey="time" stroke="#AAEEEE" opacity="0.8"/>
           </AreaChart>
         </ResponsiveContainer>
       </div>
