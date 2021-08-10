@@ -1,6 +1,8 @@
-.monitor {
+body {
   font-family: serif;
   font-weight: 200;
+}
+.monitor {
   align-content: center;
   padding: 0px 12px;
   .title {
@@ -55,4 +57,15 @@
   align-content: center;
   text-align: center;
   margin: 10px auto;
+  h3 {
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    &.temperature {
+      color: #33DD44;
+    }
+    &.humidity {
+      color: #66b1ef;
+    }
+  }
 }
