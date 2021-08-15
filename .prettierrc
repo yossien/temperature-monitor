@@ -5,7 +5,7 @@ requirePragma: false
 trailingComma: 'es5'
 bracketSpacing: true
 arrowParens: 'always'
-prosWrap: 'preserve'
+proseWrap: 'preserve'
 embeddedLanguageFormatting: 'auto'
 htmlWhitespaceSensitivity: 'css'
 vueIndentScriptAndStyle: false
