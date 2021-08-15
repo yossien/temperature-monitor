@@ -12,7 +12,18 @@ vueIndentScriptAndStyle: false
 jsxSingleQuote: false
 jsxBracketSameLine: false
 overrides:
-    - files: '*.{js, ts, html, css, scss, json}'
+    - files:
+          [
+              '*.js',
+              '*.ts',
+              '*.jsx',
+              '*.tsx',
+              '*.html',
+              '*.htm',
+              '*.css',
+              '*.scss',
+              '*.sass',
+          ]
       options:
           tabWidth: 2
 # ------- below setting inherit editorconfig
