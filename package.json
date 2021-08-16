@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
+        "cspell": "npx cspell **/*.ts **/*.tsx",
         "prepare": "husky install",
         "dev": "next dev",
         "build": "next build && next export",
