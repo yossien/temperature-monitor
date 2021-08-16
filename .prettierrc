@@ -1,0 +1,33 @@
+semi: false
+singleQuote: true
+quoteProps: 'as-needed'
+requirePragma: false
+trailingComma: 'es5'
+bracketSpacing: true
+arrowParens: 'always'
+proseWrap: 'preserve'
+embeddedLanguageFormatting: 'auto'
+htmlWhitespaceSensitivity: 'css'
+vueIndentScriptAndStyle: false
+jsxSingleQuote: false
+jsxBracketSameLine: false
+overrides:
+    - files:
+          [
+              '*.js',
+              '*.ts',
+              '*.jsx',
+              '*.tsx',
+              '*.html',
+              '*.htm',
+              '*.css',
+              '*.scss',
+              '*.sass',
+          ]
+      options:
+          tabWidth: 2
+# ------- below setting inherit editorconfig
+# tabWidth: 2
+# useTabs: false
+# endOfLine: "lf"
+# printWidth: 80
