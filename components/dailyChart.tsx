@@ -23,6 +23,7 @@ const DailyChart = ({ conditionList }: Props) => {
   const { darkModeActive } = useDarkMode()
   const className = darkModeActive ? 'dark' : ''
   const stroke = darkModeActive ? '#d4cccc' : '#888888'
+  const brushColor = darkModeActive ? '#5f7f7f' : '#AAEEEE'
   return (
     <>
       <div className={`chart ${className}`}>
@@ -56,7 +57,12 @@ const DailyChart = ({ conditionList }: Props) => {
               stroke="#66b1ef"
               opacity={0.6}
             />
-            <Brush dataKey="time" stroke="#AAEEEE" opacity="0.8" />
+            <Brush
+              dataKey="time"
+              stroke={stroke}
+              fill={brushColor}
+              opacity="0.8"
+            />
           </AreaChart>
         </ResponsiveContainer>
       </div>
