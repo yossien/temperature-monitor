@@ -14,20 +14,25 @@ import {
   Brush,
   AreaChart,
 } from 'recharts'
+import { useDarkMode } from 'next-dark-mode'
 
 type Props = {
   conditionList: Condition[]
 }
 const DailyChart = ({ conditionList }: Props) => {
+  const { darkModeActive } = useDarkMode()
+  const className = darkModeActive ? 'dark' : ''
+  const stroke = darkModeActive ? '#d4cccc' : '#888888'
+  const brushColor = darkModeActive ? '#5f7f7f' : '#AAEEEE'
   return (
     <>
-      <div className="chart">
-        <h3 className="temperature">Temperature</h3>
+      <div className={`chart ${className}`}>
+        <h3 className={`temperature ${className}`}>Temperature</h3>
         <ResponsiveContainer width="90%" height={150}>
           <AreaChart syncId="sync1" data={conditionList}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#88BB88" />
-            <XAxis dataKey="time" />
-            <YAxis domain={['dataMin', 'dataMax']} />
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" stroke={stroke} />
+            <YAxis domain={['dataMin', 'dataMax']} stroke={stroke} />
             <Tooltip />
             <Area
               type="monotone"
@@ -42,8 +47,8 @@ const DailyChart = ({ conditionList }: Props) => {
         <ResponsiveContainer width="90%" height={150}>
           <AreaChart syncId="sync1" data={conditionList}>
             <CartesianGrid strokeDasharray="3 3" stroke="#8888BB" />
-            <XAxis dataKey="time" />
-            <YAxis domain={['dataMin', 'dataMax']} />
+            <XAxis dataKey="time" stroke={stroke} />
+            <YAxis domain={['dataMin', 'dataMax']} stroke={stroke} />
             <Tooltip />
             <Area
               type="monotone"
@@ -52,7 +57,12 @@ const DailyChart = ({ conditionList }: Props) => {
               stroke="#66b1ef"
               opacity={0.6}
             />
-            <Brush dataKey="time" stroke="#AAEEEE" opacity="0.8" />
+            <Brush
+              dataKey="time"
+              stroke={stroke}
+              fill={brushColor}
+              opacity="0.8"
+            />
           </AreaChart>
         </ResponsiveContainer>
       </div>

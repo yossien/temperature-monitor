@@ -19,17 +19,15 @@ const Index = () => {
   }
 
   return (
-    <>
-      <Layout>
-        <Head>
-          <title>temperature monitor page</title>
-        </Head>
-        <div style={{ marginTop: 60 }}>
-          <Monitor condition={latestCondition()} />
-          <DailyChart conditionList={conditionList} />
-        </div>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>temperature monitor page</title>
+      </Head>
+      <div style={{ marginTop: 60 }}>
+        <Monitor condition={latestCondition()} />
+        <DailyChart conditionList={conditionList} />
+      </div>
+    </Layout>
   )
 }
 
